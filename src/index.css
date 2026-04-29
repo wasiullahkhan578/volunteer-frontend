@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add smooth scrolling globally */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #0a1828; /* Classic Dark Blue Base */
+  color: white;
+}
+
+/* --- FORCE ANIMATION FOR GLOWING ORBS --- */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 10s infinite;
+}
+
+/* --- FORCE COLORS (Guarantees your palette works) --- */
+.bg-teal-500 {
+  background-color: #178582 !important;
+}
+.bg-teal-600 {
+  background-color: #116a67 !important;
+}
+.bg-gold-500 {
+  background-color: #bfa181 !important;
+}
+.bg-classic-900 {
+  background-color: #0a1828 !important;
+}
+
+/* --- BLOB STYLING --- */
+.blob-fix {
+  filter: blur(80px); /* Makes them soft and glowing */
+  opacity: 0.6; /* Visible but not overwhelming */
+  mix-blend-mode: screen; /* Blends nicely with the dark background */
+}
