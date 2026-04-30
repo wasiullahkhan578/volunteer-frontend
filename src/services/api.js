@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:8080/api";
+const BASE_URL = "https://volunteer-backend-production-2364.up.railway.app/";
 
 const apiClient = axios.create({
   baseURL: BASE_URL,
