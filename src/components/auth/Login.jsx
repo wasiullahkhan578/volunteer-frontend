@@ -46,12 +46,15 @@ export default function Login() {
     setMessage({ type: "", text: "" });
 
     try {
-      const response = await fetch("http://localhost:8080/api/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        // Synchronizing role case for Java Enum
-        body: JSON.stringify({ ...formData, role: role.toUpperCase() }),
-      });
+      const response = await fetch(
+        "https://volunteer-backend-production-2364.up.railway.app/api/auth/login",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          // Synchronizing role case for Java Enum
+          body: JSON.stringify({ ...formData, role: role.toUpperCase() }),
+        },
+      );
 
       // Handle non-200 responses safely to avoid JSON parse errors
       if (!response.ok) {
@@ -102,7 +105,7 @@ export default function Login() {
     setForgotLoading(true);
     try {
       const response = await fetch(
-        "http://localhost:8080/api/auth/forgot-password",
+        "https://volunteer-backend-production-2364.up.railway.app/api/auth/forgot-password",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
