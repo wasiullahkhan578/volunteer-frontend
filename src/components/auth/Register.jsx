@@ -59,14 +59,17 @@ export default function Register() {
     setMessage({ type: "", text: "" });
 
     try {
-      const response = await fetch("http://localhost:8080/api/auth/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...formData,
-          role: role,
-        }),
-      });
+      const response = await fetch(
+        "https://volunteer-backend-production-2364.up.railway.app/api/auth/register",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            ...formData,
+            role: role,
+          }),
+        },
+      );
 
       // --- UPDATED: Expecting JSON response for Milestone 3 synchronization ---
       const data = await response.json();
